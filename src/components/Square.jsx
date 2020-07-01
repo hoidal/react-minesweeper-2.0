@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Square.module.css';
 
-function Square({ data }) {
+function Square({ data, handleReveal }) {
 
     const getCellContents = cellData => {
         if(cellData.isRevealed) {
@@ -38,8 +38,13 @@ function Square({ data }) {
     }
     const squareStyling = getSquareStyle(data);
 
+    const {x, y} = data;
+
     return (
-        <div className={squareStyling}>
+        <div 
+            className={squareStyling}
+            onClick={(e) => handleReveal(e, [x, y])}
+        >
             {cellContents}
         </div>
     )

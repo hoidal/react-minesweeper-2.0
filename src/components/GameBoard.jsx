@@ -2,12 +2,18 @@ import React from 'react';
 import Square from './Square';
 import styles from './GameBoard.module.css';
 
-function GameBoard({ difficulty, board }) {
+function GameBoard({ difficulty, board, handleReveal }) {
     
     const createSquares = board => {
         return board.map((row, rowIndex) => {
             return row.map((column, columnIndex) => {
-                return <Square key={[rowIndex+100, columnIndex]} data={board[rowIndex][columnIndex]} />;
+                return (
+                    <Square 
+                        key={[rowIndex+100, columnIndex]} 
+                        data={board[rowIndex][columnIndex]} 
+                        handleReveal={handleReveal}
+                    />
+                );
             })
         })
     }
@@ -25,7 +31,7 @@ function GameBoard({ difficulty, board }) {
     }
 
     const boardClassName = getBoardSize(difficulty);
-
+    
     return (
         <div className={boardClassName}>
             {board.length > 0 ? createSquares(board) : null}

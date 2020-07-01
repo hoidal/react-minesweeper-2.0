@@ -28,11 +28,14 @@ export function initializeBoard(difficulty) {
         board.push([]);
         for(let j=0; j < height; j++) {
             board[i][j] = {
+                x: i,
+                y: j,
                 minesAdjacent: 0,
                 isMine: false,
                 isEmpty: true,
                 isRevealed: false,
-                isFlagged: false
+                isFlagged: false,
+                exploded: false
             };
         }
     }
