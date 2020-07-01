@@ -1,0 +1,16 @@
+.gameboard {
+    border: 2px solid red;
+    display: grid;
+}
+
+.beginner {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.intermediate {
+    grid-template-columns: repeat(16, 1fr);
+}
+
+.expert {
+    grid-template-columns: repeat(30, 1fr);
+}

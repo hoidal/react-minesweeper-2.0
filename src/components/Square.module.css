@@ -1,0 +1,15 @@
+.square {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    width: 2rem;
+    height: 2rem;
+    background: grey;
+}
